@@ -39,7 +39,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Packets\IPacket.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Handlers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LessGravity.Common\LessGravity.Common.csproj">
+      <Project>{48DF960B-85AB-4EB7-8BE3-D5A31CDC016B}</Project>
+      <Name>LessGravity.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
