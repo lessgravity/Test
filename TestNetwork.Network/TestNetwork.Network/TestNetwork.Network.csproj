@@ -39,7 +39,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NetworkManager.cs" />
+    <Compile Include="PacketDirection.cs" />
+    <Compile Include="Packets\DisconnectPacket.cs" />
     <Compile Include="Packets\IPacket.cs" />
+    <Compile Include="Packets\KeepAlivePacket.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
