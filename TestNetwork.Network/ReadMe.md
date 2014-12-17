@@ -4,7 +4,7 @@ Test Project to figure out how to implement a semi smart client server network f
 
 LessGravity.Common
 ------------------
-- Supposed to contain commonly used classes/helpers across the whole (even other) solution.
+- Supposed to contain commonly used classes/helpers across the whole (even other) solutions.
 
 TestNetwork.Client
 ------------------
