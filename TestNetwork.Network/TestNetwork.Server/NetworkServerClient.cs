@@ -9,7 +9,6 @@ namespace TestNetwork.Server
 {
     class NetworkServerClient : IDisposable
     {
-        private readonly Stream _networkStream;
         private readonly TcpClient _client;
         private readonly ConcurrentQueue<IPacket> _packetQueue;
         private readonly NetworkManager _networkManager;
@@ -24,6 +23,7 @@ namespace TestNetwork.Server
 
         private void Disconnect(string reason = null)
         {
+
             if (!_server.Clients.Contains(this))
             {
                 throw new InvalidOperationException("The server is not aware of this client.");
@@ -85,8 +85,8 @@ namespace TestNetwork.Server
             }
             _server = server;
             _client = client;
-            _networkStream = _client.GetStream();
-            _networkManager = new NetworkManager(_networkStream);
+            var networkStream = _client.GetStream();
+            _networkManager = new NetworkManager(networkStream);
             _packetQueue = new ConcurrentQueue<IPacket>();
         }
 
@@ -128,6 +128,8 @@ namespace TestNetwork.Server
                 //
                 // Disconnect
                 //
+                Disconnect();
+                return;
             }
 
             //
@@ -150,6 +152,8 @@ namespace TestNetwork.Server
                     //
                     // Disconnect
                     //
+                    Disconnect();
+                    return;
                 }
             }
             if (IsLoggedIn)

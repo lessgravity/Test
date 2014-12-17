@@ -36,7 +36,8 @@ namespace TestNetwork.Network.Client
             {
                 throw new InvalidOperationException("Client already connected");
             }
-            _client = new TcpClient(_endPoint);
+            _client = new TcpClient();
+            _client.Connect(_endPoint);
             _networkStream = _client.GetStream();
             _networkManager = new NetworkManager(_networkStream);
 

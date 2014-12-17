@@ -102,6 +102,7 @@ namespace TestNetwork.Server
                         client.SendPackets();
                     }
                 }
+                Thread.Sleep(10);
             }
         }
 
